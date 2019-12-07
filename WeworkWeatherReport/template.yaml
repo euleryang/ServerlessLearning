@@ -1,0 +1,19 @@
+Resources:
+  python-demo:
+    Type: 'TencentCloud::Serverless::Namespace'
+    WeworkWeatherReport:
+      Type: 'TencentCloud::Serverless::Function'
+      Properties:
+        CodeUri: ./
+        Type: Event
+        Description: 这是一个通过企业微信群机器人进行天气预报的小程序
+        Role: 'SCF_QcsReqResRole'
+        Environment:
+          Variables:
+            X: "121.6544"   # 要获取天气信息的经度
+            Y: "25.1552"    # 要获取天气信息的纬度
+            WEBHOOK_URL: https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=acd8cabe-xxxxx  # 企业微信群机器人的webhook地址
+        Handler: index.main_handler
+        MemorySize: 128
+        Runtime: Python3.6
+        Timeout: 10

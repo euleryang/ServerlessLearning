@@ -1,0 +1,12 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+scf = {index = "https://mirrors.cloud.tencent.com/pypi/simple",version = "*"}
+
+[requires]
+python_version = "3.6"
